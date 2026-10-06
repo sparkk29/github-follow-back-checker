@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GitHub Follow-Back Checker</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="header">
+      <img src="icons/icon48.png" alt="" class="logo" />
+      <div class="header-text">
+        <h1>Follow-Back Checker</h1>
+        <p id="meta" class="muted">Not scanned yet</p>
+      </div>
+      <button id="scan" class="btn btn-primary">Scan</button>
+    </header>
+
+    <div id="banner" class="banner" hidden></div>
+
+    <section class="stats">
+      <div class="stat">
+        <span id="stat-followers" class="stat-value">-</span>
+        <span class="stat-label">Followers</span>
+      </div>
+      <div class="stat">
+        <span id="stat-following" class="stat-value">-</span>
+        <span class="stat-label">Following</span>
+      </div>
+      <div class="stat stat-highlight">
+        <span id="stat-nfb" class="stat-value">-</span>
+        <span class="stat-label">Not following back</span>
+      </div>
+    </section>
+
+    <section id="progress" class="progress" hidden>
+      <div class="progress-text">
+        <span id="progress-label">Unfollowing...</span>
+        <span id="progress-count"></span>
+      </div>
+      <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+    </section>
+
+    <section class="toolbar">
+      <input id="search" type="search" placeholder="Search users" autocomplete="off" />
+      <button id="toggle-kept" class="btn btn-ghost" title="Users you chose to keep following">Kept (0)</button>
+    </section>
+
+    <section class="bulk">
+      <button id="unfollow-all" class="btn btn-danger" disabled>Unfollow all shown</button>
+    </section>
+
+    <ul id="list" class="list"></ul>
+    <p id="empty" class="empty muted">Click Scan to check who doesn't follow you back.</p>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

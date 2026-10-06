@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Follow-Back Checker",
+  "version": "1.0.0",
+  "description": "Find GitHub users who don't follow you back and unfollow them in one click. Built for follow-for-follow (F4F) on GitHub.",
+  "permissions": ["storage", "scripting", "tabs"],
+  "host_permissions": ["https://github.com/*", "https://api.github.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "GitHub Follow-Back Checker",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
